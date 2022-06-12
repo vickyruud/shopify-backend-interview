@@ -3,14 +3,12 @@ const router = express.Router();
 const Contact = require('../models/contact')
 
 router.get('/contacts', (req, res, next) => {
-  // get placeholder
   Contact.find({})
     .then((data) => res.json(data))
     .catch(next);
 });
 
 router.post('/contacts', (req, res, next) => {
-  // post placeholder
   if (req.body) {
     Contact.create(req.body)
       .then((data) => res.json(data))
